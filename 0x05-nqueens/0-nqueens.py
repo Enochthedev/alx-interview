@@ -1,21 +1,19 @@
 #!/usr/bin/python3
-'''N-Queens Challenge'''
+"""N-Queens Challenge"""
 
 import sys
 
+
 def is_safe(placed_queens, r, c):
-    """
-    Check if it's safe to place a queen at (r, c)
-    """
+    """Check if it's safe to place a queen at (r, c)"""
     for row, col in placed_queens:
         if col == c or col + (r - row) == c or col - (r - row) == c:
             return False
     return True
 
+
 def find_solutions(n):
-    """
-    Find all solutions to the N-Queens problem for an NxN board
-    """
+    """Find all solutions to the N-Queens problem for an NxN board"""
     solutions = []
     placed_queens = []
 
@@ -32,6 +30,7 @@ def find_solutions(n):
 
     backtrack(0)
     return solutions
+
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
